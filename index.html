@@ -34601,5 +34601,26 @@ answer: "b) Cheaters that must be safeguarded against"
     return processedHTML;
   }
   </script>
+<script>
+  const originalShowQuestions = showQuestions;
+  
+  showQuestions = function() {
+    originalShowQuestions();
+    
+    const contentArea = document.getElementById('contentArea');
+    const firstQuestion = contentArea.querySelector('.question-item');
+    
+    if (firstQuestion) {
+      const defaultMCQNote = "Note: don't leave the chatgpt page without clicking the submit arrow, as it may result in repeated display of the same MCQ even in the next chat";
+      const noteDiv = document.createElement('div');
+      noteDiv.style.cssText = 'background-color: rgba(255, 200, 87, 0.3); border: 2px solid #ff9800; padding: 16px 20px; border-radius: 10px; margin-bottom: 26px; font-weight: 600; color: #e65100; font-size: 15px;';
+      noteDiv.textContent = defaultMCQNote;
+      
+      firstQuestion.insertAdjacentElement('afterend', noteDiv);
+    }
+  };
+</script>
+
+  
 </body>
 </html>
