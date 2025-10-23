@@ -34620,7 +34620,20 @@ answer: "b) Cheaters that must be safeguarded against"
     }
   };
 </script>
+<script>
+  function openChatGPTForPointer(pointerText) {
+    const prompt = `"${pointerText}"
 
+Version 1: explain this statement with keywords emphasis
+
+Or type any other query below
+
+
+Note: don't leave the chatgpt page without clicking the submit arrow,as it may result in repeated display of the same pointer in the next chat`;
+    const chatGPTURL = `https://chat.openai.com/?q=${encodeURIComponent(prompt)}`;
+    window.open(chatGPTURL, '_blank');
+  }
+</script>
   
 </body>
 </html>
